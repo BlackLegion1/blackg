@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 // Definir la clave secreta y el método de encriptación
 define('SECRET_KEY', 'mi_clave_secreta'); 
@@ -26,7 +26,7 @@ try {
         $contraseñaInput = trim($_POST['contrasenia_u']);  // Eliminar espacios adicionales
 
         // Obtener usuario y tipo
-        $stmt = $conn->prepare("SELECT contrasenia_u, tipo_u FROM usuario WHERE usuario = :usuario");
+        $stmt = $conn->prepare("SELECT id_u,contrasenia_u, tipo_u FROM usuario WHERE usuario = :usuario");
         $stmt->bindParam(':usuario', $usernameInput);
         $stmt->execute();
 
@@ -43,6 +43,7 @@ try {
             echo "Contraseña ingresada: " . $contraseñaInput . "<br>"; // Depuración
 
             if ($contraseñaInput === $decryptedPassword) {
+                $_SESSION['id_u'] = $row['id_u'];
                 if ($tipoUsuario == 'admin') {
                     echo "<script>alert('Inicio de sesión exitoso. Bienvenido, administrador!'); window.location.href='consultarusuario.php';</script>";
                 } else {

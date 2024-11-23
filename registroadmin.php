@@ -28,7 +28,7 @@ try {
 
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      
+    
         $nombre = $_POST['nombre'];
         $apellidoP = $_POST['apellidop'];
         $apellidoM = $_POST['apellidom'];
