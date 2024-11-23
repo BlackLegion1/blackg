@@ -1,0 +1,26 @@
+body{
+    margin: 0 auto;
+    background-color: #232323;
+
+}
+
+.full{
+    display: grid;
+    place-items: center;
+    padding: 0;
+    background-color: #232323;
+    margin: 0;
+    color: aliceblue;
+}
+
+.container{
+    background-color: rgb(31, 31, 31);
+    margin: 5vh 55vh;
+    padding: 5vh;
+    width: 30%;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 23px;
+}
+
+
+
