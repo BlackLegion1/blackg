@@ -5,13 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Registro Usuarios</title>
     <link rel="icon" href="logo-modified.png" type="image/png"> 
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/adminregistra.css">
+    
 </head>
 <body>
 
+<!-- Botón para abrir el sidebar -->
+<button class="menu-btn" id="menu-toggle">&#9776;</button> 
+
+<br><br><br>
+
+<aside class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-sidebar">&times;</button>
+    <br><br><br>
+    <nav class="sidebar-nav">
+        <a href="login.html">• Cerrar sesión</a>
+        <a href="registroadmin.html">• Ingresar nuevo usuario</a>
+        <a href="consultarusuario.php">• Modificar registros de usuarios</a>
+        <a href="prodingresar.html">• Ingresar productos</a>
+        <a href="prodconsultar.php">• Modificar productos</a>
+    </nav>
+</aside>
+
+<script>
+    // Mostrar/ocultar el sidebar
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.toggle('visible');
+    });
+
+    document.getElementById('close-sidebar').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.remove('visible');
+    });
+
+    // Efecto de cambio de tamaño en el título al deslizar
+    window.addEventListener('scroll', function() {
+        const title = document.getElementById('site-title');
+        if (window.scrollY > 50) {
+            title.classList.add('shrink');
+        } else {
+            title.classList.remove('shrink');
+        }
+    });
+</script>
+
+   <br><br><br>
+  
     
-    <div class="form-side" style="margin-top: 360px;">
+    
         <div class="container">
+            <h1>     </h1>
+            <h1>     </h1>
+           
             <h2>REGISTRAR NUEVO USUARIO</h2>
         <form action="registroadmin.php" method="post" onsubmit="return validarFormulario()">
             
@@ -55,33 +99,35 @@
             </div>
             <input type="submit" value="REGISTRAR">
         </form>
-    </div>
-    </div>
+        <h1>     </h1>
+    </div>  
+   
 
-    <script>
+    
+    
+</body>
+<script>
        
 
-        function validarFormulario() {
-    const email = document.getElementById("email").value;
-    const contraseña = document.getElementById("contraseña").value;
-    const confirmarContraseña = document.getElementById("confirmar_contraseña").value;
+    function validarFormulario() {
+const email = document.getElementById("email").value;
+const contraseña = document.getElementById("contraseña").value;
+const confirmarContraseña = document.getElementById("confirmar_contraseña").value;
 
-    const regexEmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-    if (!regexEmail.test(email)) {
-        alert("Por favor, ingrese un correo electrónico válido (el ingresado tiene caracteres invalidos o está mal escrito).");
-        return false;
-    }
+const regexEmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+if (!regexEmail.test(email)) {
+    alert("Por favor, ingrese un correo electrónico válido (el ingresado tiene caracteres invalidos o está mal escrito).");
+    return false;
+}
 
-    if (contraseña !== confirmarContraseña) {
-        alert("Las contraseñas no coinciden. Por favor, inténtelo de nuevo.");
-        return false;
-    }
+if (contraseña !== confirmarContraseña) {
+    alert("Las contraseñas no coinciden. Por favor, inténtelo de nuevo.");
+    return false;
+}
 
-    return true; 
+return true; 
 }
 
 
-    </script>
-    
-</body>
+</script>
 </html>

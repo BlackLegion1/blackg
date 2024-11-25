@@ -30,7 +30,7 @@ if (!checkdate($mes, 1, $anio)) {
 }
 
 
-$fechav=($anio.'/'.$mes);
+$fechav=("$anio/$mes");
 
 $sql = "INSERT INTO tarjeta (nom_titular, tipo_tj, fecha_venc, num_tj, cvv, id_u) VALUES (?, ?, ?, ?, ?, ?)";
 $pre = mysqli_prepare($conexion, $sql);

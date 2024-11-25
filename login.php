@@ -10,7 +10,6 @@ function decryptPassword($encryptedPassword) {
     list($encryptedData, $iv) = explode('::', base64_decode($encryptedPassword), 2); 
     return openssl_decrypt($encryptedData, METHOD, SECRET_KEY, 0, $iv); 
 }
-session_start();
 
 $host = 'localhost';
 $dbname = 'gb'; 
@@ -39,9 +38,6 @@ try {
             $decryptedPassword = decryptPassword($encryptedPassword);
 
             // Verificar si la contraseña ingresada coincide con la desencriptada
-            echo "Contraseña desencriptada: " . $decryptedPassword . "<br>"; // Depuración
-            echo "Contraseña ingresada: " . $contraseñaInput . "<br>"; // Depuración
-
             if ($contraseñaInput === $decryptedPassword) {
                 $_SESSION['id_u'] = $row['id_u'];
                 if ($tipoUsuario == 'admin') {

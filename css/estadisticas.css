@@ -1,0 +1,124 @@
+
+    body {
+        margin: 0;
+        background: linear-gradient(130deg, #870000, #292929, #3b2e1e, #002f22, #292929, #000e3b);
+        font-family: 'Merriweather', sans-serif;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #000000;
+        color: white;
+        padding: 10px 20px;
+        position: fixed;  
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    header h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 80px 20px 20px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #fff9ef;
+        margin-bottom: 20px;
+    }
+
+    canvas {
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    
+
+    
+
+    
+  
+
+    .sel {
+        max-width: 100%;
+    }
+
+    a {
+        background: none;
+        text-decoration: none;
+        color: white;
+    }
+
+    .tit {
+        background: #141414;
+        border-radius: 18px;
+        padding: 0vh 4vh;
+        margin-right: 30px;
+        color: #fff9ef;
+       
+    }
+
+    #clas {
+        width: 49%;
+        background: #282828;
+        color: whitesmoke;
+    }
+    .tit>a {
+        text-decoration: none;
+        color: white;
+    }
+
+   
+
+.tit> p{
+    text-decoration: underline; 
+    text-align: center; 
+    cursor: pointer;
+}
+
+
+    /* Añadido estilo para los gráficos */
+    section {
+        padding-top: 120px;
+    }
+
+    canvas {
+        max-width: 800px;
+        margin: 20px auto;
+        display: block;
+        background: #232323;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+    /* Estilo del menú desplegable */
+.menu {
+    margin: 20px;
+    text-align: center;
+}
+
+#graficaSelect {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 250px;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+#graficaSelect:hover {
+    background-color: #3d3d3d;
+}

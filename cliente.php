@@ -156,12 +156,16 @@ function getCarritoCount()
                 </div>
             </form>
         </div>
+
         <div class="tit">
             <a href="cliente.php" style="text-decoration: none;">
                 <h1 style="cursor: pointer; font-family: 'Doto', sans-serif; font-size: xxx-large;">BLACK-GAMES</h1>
-                <p style="text-decoration: underline; text-align: center; cursor: pointer;">Inicio</p>
+                
+                <a href="historial.php">Cuenta - Historial de compras</a>  
+                <a href="estadisticas.php">Estadisticas</a> 
             </a>
         </div>
+
     </header>
 
     <main>

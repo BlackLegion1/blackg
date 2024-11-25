@@ -1,0 +1,165 @@
+/* Estilos generales del sitio */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Cabecera */
+.header {
+    background: linear-gradient(135deg, #000000, #4e4e4e); /* De azul a morado */
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.site-title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.shrink {
+    font-size: 1.8rem;
+    transition: font-size 0.3s ease-in-out;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #2d2d2d;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.visible {
+    left: 0;
+}
+
+.sidebar-nav {
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: #444;
+}
+
+/* Botones del menú */
+.menu-btn, .close-btn {
+    font-size: 30px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+}
+
+.menu-btn {
+    left: 20px;
+}
+
+.close-btn {
+    left: 200px;
+    top: 10px;
+}
+
+/* Tabla */
+.table-container {
+    padding: 20px;
+    max-width: 90%;
+    margin: 30px auto;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 1rem;
+
+}
+
+th {
+    background-color: #3b3b3b;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    background-color: #2a2a2a;
+    color: #bbb;
+    border-bottom: 1px solid #444;
+}
+
+  tr:hover {
+    background-color: #6d2fa033;
+    color: #fff;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px 5px #464646;
+}
+
+td img {
+    border-radius: 5px;
+}
+
+a {
+    color: #00b7ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0c00bb;
+}
+
+
+/* Media Queries para hacer que el diseño sea responsive */
+@media (max-width: 768px) {
+    .table-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}

@@ -24,11 +24,59 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Videojuegos</title>
-    <link rel="stylesheet" href="css/tablas.css">
+    <link rel="stylesheet" href="css/tablass.css">
 </head>
 <body>
-    <h1>Lista de Videojuegos</h1>
-    <table border="1">
+
+
+<header class="header">
+        <h1 class="site-title" id="site-title">Bienvenido Administrador</h1>
+
+
+</header>
+
+<!-- Botón para abrir el sidebar -->
+<button class="menu-btn" id="menu-toggle">&#9776;</button> 
+
+<br><br><br>
+
+<aside class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-sidebar">&times;</button>
+    <br><br><br>
+    <nav class="sidebar-nav">
+        <a href="login.html">• Cerrar sesión</a>
+        <a href="registroadmin.html">• Ingresar nuevo usuario</a>
+        <a href="consultarusuario.php">• Modificar registros de usuarios</a>
+        <a href="prodingresar.html">• Ingresar productos</a>
+        <a href="prodconsultar.php">• Modificar productos</a>
+    </nav>
+</aside>
+
+<script>
+    // Mostrar/ocultar el sidebar
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.toggle('visible');
+    });
+
+    document.getElementById('close-sidebar').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.remove('visible');
+    });
+
+    // Efecto de cambio de tamaño en el título al deslizar
+    window.addEventListener('scroll', function() {
+        const title = document.getElementById('site-title');
+        if (window.scrollY > 50) {
+            title.classList.add('shrink');
+        } else {
+            title.classList.remove('shrink');
+        }
+    });
+</script>
+
+    
+
+ <div class="table-container" >    
+    <table border="1" >
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -52,7 +100,7 @@ $result = $conn->query($sql);
                     <td><?php echo htmlspecialchars($row['precio']); ?></td>
                     <td>
                         <?php if ($row['imagen']) { ?>
-                            <img src="imgprod/<?php echo htmlspecialchars($row['imagen']); ?>" alt="Imagen del videojuego" width="100">
+                            <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="Imagen del videojuego" width="100">
                         <?php } ?>
                     </td>
                     <td>
@@ -65,7 +113,7 @@ $result = $conn->query($sql);
             <?php } ?>
         </tbody>
     </table>
-
+    </div>
     <?php
     // Cerrar
     $conn->close();

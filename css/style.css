@@ -20,7 +20,10 @@ body{
     width: 30%;
     border: 2px solid rgb(88, 88, 88);
     border-radius: 23px;
+    list-style: none;
 }
 
 
-
+ul>li{
+    list-style: none;
+}

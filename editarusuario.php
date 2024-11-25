@@ -100,13 +100,56 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Registro Usuario</title>
     <link rel="icon" href="logo.jpg" type="image/png">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/adminregistra.css">
 </head>
-<bod>
+<body>
+
+
+<!-- Botón para abrir el sidebar -->
+<button class="menu-btn" id="menu-toggle">&#9776;</button> 
+
+<br><br><br>
+
+<aside class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-sidebar">&times;</button>
+    <br><br><br>
+    <nav class="sidebar-nav">
+        <a href="login.html">• Cerrar sesión</a>
+        <a href="registroadmin.html">• Ingresar nuevo usuario</a>
+        <a href="consultarusuario.php">• Modificar registros de usuarios</a>
+        <a href="prodingresar.html">• Ingresar productos</a>
+        <a href="prodconsultar.php">• Modificar productos</a>
+    </nav>
+</aside>
+
+<script>
+    // Mostrar/ocultar el sidebar
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.toggle('visible');
+    });
+
+    document.getElementById('close-sidebar').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.remove('visible');
+    });
+
+    // Efecto de cambio de tamaño en el título al deslizar
+    window.addEventListener('scroll', function() {
+        const title = document.getElementById('site-title');
+        if (window.scrollY > 50) {
+            title.classList.add('shrink');
+        } else {
+            title.classList.remove('shrink');
+        }
+    });
+</script>
+
+   <br><br><br>
+
 
     
-<div class="form-side" style="margin-top: 300px;"></div>
-    <div class="container">
+<div class="container">
+            <h1>     </h1>
+            <h1>     </h1>
     <h2>Editar Registro Usuario</h2>
         <form method="POST" onsubmit="return validarFormulario()">
             <div class="input-container">
@@ -153,7 +196,7 @@ $conn->close();
             <input type="submit" value="ACTUALIZAR">
         </form>
     </div>
-</div>
+
 
     <script src="script.js"></script>
 </body>
